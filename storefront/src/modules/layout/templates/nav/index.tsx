@@ -22,10 +22,11 @@ export default async function Nav() {
           <div className="flex items-center h-full">
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
+              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase font-bold tracking-wider"
               data-testid="nav-store-link"
             >
-              Medusa Store
+              <span className="text-emerald-600">TAP</span>
+              <span className="text-slate-800">QO</span>
             </LocalizedClientLink>
           </div>
 
@@ -38,7 +39,7 @@ export default async function Nav() {
                   scroll={false}
                   data-testid="nav-search-link"
                 >
-                  Search
+                  Pretraga
                 </LocalizedClientLink>
               )}
               <LocalizedClientLink
@@ -46,7 +47,7 @@ export default async function Nav() {
                 href="/account"
                 data-testid="nav-account-link"
               >
-                Account
+                Račun
               </LocalizedClientLink>
             </div>
             <Suspense
@@ -56,7 +57,7 @@ export default async function Nav() {
                   href="/cart"
                   data-testid="nav-cart-link"
                 >
-                  Cart (0)
+                  Korpa (0)
                 </LocalizedClientLink>
               }
             >
