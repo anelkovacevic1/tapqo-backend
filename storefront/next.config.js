@@ -7,11 +7,26 @@ checkEnvVariables()
  */
 const nextConfig = {
   reactStrictMode: true,
+  // Standalone output - manji deploy bundle, brži start na Railway
+  output: "standalone",
   eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
+  },
+  // Brži build - preskače generisanje source mapa u produkciji
+  productionBrowserSourceMaps: false,
+  // Kompresija na nivou Railway reverse proxy-ja, ne treba u Next.js
+  compress: false,
+  // Optimizacija paketa - tree-shaking za velike biblioteke
+  experimental: {
+    optimizePackageImports: [
+      "@medusajs/ui",
+      "@medusajs/icons",
+      "lodash",
+      "react-instantsearch-hooks-web",
+    ],
   },
   images: {
     unoptimized: true,
